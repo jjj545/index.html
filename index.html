@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>活動專頁｜銀行點數全面升級！</title>
+  <style>
+    body { font-family: "微軟正黑體", sans-serif; background: #f5f5f5; margin: 0; }
+    header { background: #2c3e50; color: white; padding: 2rem; text-align: center; }
+    section { background: white; margin: 2rem auto; padding: 2rem; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    h1, h2 { color: #e74c3c; }
+    p, ul { line-height: 1.6; }
+    .highlight { color: #2980b9; font-weight: bold; }
+    .cta { text-align: center; margin-top: 2rem; }
+    .cta button { background: #e74c3c; color: white; border: none; padding: 1rem 2rem; font-size: 1rem; border-radius: 4px; cursor: pointer; }
+    .cta button:hover { background: #c0392b; }
+    #countdown { font-size: 1.5rem; font-weight: bold; color: #27ae60; text-align: center; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌟🌟 全新活動盛大登場！ 🌟🌟</h1>
+    <p>親愛的夥伴們，為了讓大家的點數更具價值，我們特別推出<br>
+    「原紙本點數全面升級為銀行點」 的超值活動！趕快來參加，讓您手上的點數發揮最大效益吧！</p>
+    <div id="countdown">倒數中...</div>
+  </header>
+
+  <section>
+    <h2>🎯 活動主題</h2>
+    <ul>
+      <li>🔹 將原有的 <span class="highlight">紙本點數</span> 以 <span class="highlight">100（紙本點）:1（銀行點）</span> 的超高兌換比率，全面轉換成銀行點。</li>
+      <li>🔹 新系統上線後，所有紙本點數將統一轉換，暫停使用，以更便利、更彈性的方式進行積分運用。</li>
+    </ul>
+
+    <h2>📅 活動期間</h2>
+    <p>即日起至 <span class="highlight">8月暑假結束前</span>，錯過可惜，敬請把握機會！</p>
+
+    <h2>📣 活動說明與特色</h2>
+    <ul>
+      <li>🔸 <strong>銀行點數功能大升級：</strong> 可用於兌換禮品、抽獎、活動報名等多元用途。</li>
+      <li>🔸 <strong>新增會員制度：</strong>
+        <ul>
+          <li>✅ <strong>會員消費專屬折扣：</strong> 在合作商家享有優惠。</li>
+          <li>✅ <strong>銀行點數存款利息：</strong> 將點數存入賬戶可享利息回饋。</li>
+        </ul>
+      </li>
+      <li>🔸 <strong>每日抽獎活動：</strong> 小禮物至大獎等你來抽！</li>
+      <li>🔸 <strong>小政策頒發：</strong> 活動期間推出驚喜福利，收穫滿滿！</li>
+      <li>🔸 <strong>每週富豪榜挑戰：</strong> 消費排行競賽，贏得榮耀與獎勵！</li>
+    </ul>
+
+    <h2>💡 如何參加</h2>
+    <ul>
+      <li>✅ 系統將自動轉換紙本點數。</li>
+      <li>✅ 成為會員享受完整福利。</li>
+      <li>✅ 聯繫 <span class="highlight">詹凡葦</span> 獲取協助。</li>
+    </ul>
+
+    <h2>✨ 溫馨提醒</h2>
+    <ul>
+      <li>🌸 請持續關注公告避免錯過資訊。</li>
+      <li>🌸 活動內容將不定期更新。</li>
+    </ul>
+
+    <div class="cta">
+      <button onclick="alert('敬請聯繫詹凡葦以了解更多！')">立即參加</button>
+    </div>
+
+    <h2>🚀 準備好了嗎？</h2>
+    <p>🎉 趕快行動，享受會員尊榮特權與驚喜獎勵吧！</p>
+  </section>
+
+  <script>
+    // 倒數計時器邏輯
+    const countdownEl = document.getElementById("countdown");
+    const endDate = new Date("2025-08-31T23:59:59").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance < 0) {
+        countdownEl.textContent = "🎉 活動已結束，感謝參與！";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent = `活動倒數：${days} 天 ${hours} 時 ${minutes} 分 ${seconds} 秒`;
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
